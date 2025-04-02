@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xanacea</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./tailwind.config.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ovo&display=swap"
+      rel="stylesheet" />
+    <link rel="shortcut icon" href="./images/websiteicon.png" />
+    <style>
+      .modal-image {
+        max-width: 90%;
+        max-height: 90%;
+      }
+
+      #modal {
+        z-index: 1000;
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        z-index: 1001;
+      }
+    </style>
+  </head>
+  <body class="overflow-x-hidden font-Outfit leading-8">
+    <nav class="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50">
+      <img src="./images/logo4x.png" alt="Logo" class="w-36 cursor-pointer mr-14" />
+      <ul
+        class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shadow-sm bg-opacity-50 font-Ovo">
+        <li><a href="#top">Home</a></li>
+        <li><a href="#about">About me</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">My Work</a></li>
+        <li><a href="#contact">Contact me</a></li>
+      </ul>
+
+      <div class="flex items-center gap-4">
+        <a
+          href="#contact"
+          class="hidden lg:flex items-center gap-2 px-10 py-2.5 border border-gray-500 rounded-full ml-4 font-Ovo"
+          >Contact <img src="./images/send.png" alt="arrow" class="w-5"
+        /></a>
+        <button class="block md:hidden ml-3" onclick="openMenu()">
+          <img src="./images/menu-black.png" alt="" class="w-7" />
+        </button>
+      </div>
+      <!-- ------- mobile menu ------- -->
+      <ul
+        id="sideMenu"
+        class="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-emerald-50 transition duration-500 font-Ovo">
+        <div class="absolute right-6 top-6" onclick="closeMenu()">
+          <img src="./images/close-black.png" alt="" class="w-8 cursor-pointer" />
+        </div>
+
+        <li><a href="#top" onclick="closeMenu()">Home</a></li>
+        <li><a href="#about" onclick="closeMenu()">About me</a></li>
+        <li><a href="#services" onclick="closeMenu()">Services</a></li>
+        <li><a href="#work" onclick="closeMenu()">My Work</a></li>
+        <li><a href="#contact" onclick="closeMenu()">Contact me</a></li>
+      </ul>
+    </nav>
+
+    <!-- ------- header ------- -->
+
+    <div
+      class="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
+      <img src="./images/melpoCircleWithoutFon.png" alt="img" class="rounded-full w-32" />
+      <h3 class="flex items-end gap-2 text-xl md:text-2xl mb-3 font-Ovo">
+        Hi! I'm Ereina<img src="./images/hruhello.png" alt="" class="w-7" />
+      </h3>
+      <h1 class="text-3xl sm:text-6xl lg:text-[66px] font-Ovo">
+        artist and graphic designer based in Wroclaw.
+      </h1>
+      <p class="max-w-2xl mx-auto font-Ovo">
+        I am an artist with 7 years of experience who has taken part in many large projects.
+      </p>
+
+      <div>
+        <a href="#contact" class="inline-flex">
+          <span
+            class="h-12 flex items-center justify-center uppercase font-semibold px-8 border border-black hover:bg-black hover:text-white transition duration-500 ease-in-out"
+            >contact me</span
+          >
+          <span
+            class="h-12 w-12 flex-shrink-0 flex items-center justify-center border border-l-0 border-black hover:bg-black hover:text-white transition duration-500 ease-in-out">
+            <svg
+              class="h-3 w-3"
+              aria-hidden="true"
+              focusable="false"
+              data-icon="chevron-right"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 256 512"
+              class="svg-inline--fa fa-chevron-right fa-w-8 fa-9x">
+              <path
+                fill="currentColor"
+                d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z" />
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- about section -->
+
+    <div id="about" class="w-full px-[12%] py-10 scroll-mt-20">
+      <h4 class="text-center mb-2 text-lg font-Ovo">Introduction</h4>
+      <h2 class="text-center text-5xl font-Ovo">About me</h2>
+
+      <div class="flex w-full flex-col lg:flex-row items-center gap-20 my-20">
+        <div class="max-w-max mx-auto">
+          <video
+            src="./images/melpomenevideo.mp4"
+            class="w-80 sm:w-full rounded-3xl outline outline-offset-8"
+            autoplay
+            loop
+            muted></video>
+        </div>
+        <div class="flex-1">
+          <p class="mb-8 max-w-2xl font-Ovo">
+            I am a self-employed artist who takes commissions for drawings. I have been drawing
+            since early childhood, during this time I have absorbed a lot of art and now I express
+            myself publicly. If you like the style in which I draw and would like some art, feel
+            free to contact me.
+          </p>
+
+          <ul class="grid grid-cols-1 sm:grid-cols-auto gap-6 max-w-2xl">
+            <li
+              class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-[#e9fdff] hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]">
+              <img src="./images/language.png" alt="" class="w-7 mt-3" />
+              <h3 class="my-4 font-semibold text-gray-700">Languages</h3>
+              <p class="text-gray-600 text-sm">English, Polish, Russian, Ukrainian</p>
+            </li>
+            <li
+              class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-[#e9fdff] hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]">
+              <img src="./images/calendar.png" alt="" class="w-7 mt-3" />
+              <h3 class="my-4 font-semibold text-gray-700">Work schedule</h3>
+              <p class="text-gray-600 text-sm">Сoordinate with the customer</p>
+            </li>
+            <li
+              class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-[#e9fdff] hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]">
+              <img src="./images/customize-computer.png" alt="" class="w-7 mt-3" />
+              <h3 class="my-4 font-semibold text-gray-700">Favorite styles</h3>
+              <p class="text-gray-600 text-sm">Manga, anime, videogames</p>
+            </li>
+          </ul>
+          <h4 class="my-6 text-gray-700 font-Ovo">Tools i use</h4>
+
+          <ul class="flex items-center gap-3 sm:gap-5">
+            <li
+              class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+              <img src="./images/csplogo.png" alt="csp" class="w-5 sm:w-8" />
+            </li>
+            <li
+              class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+              <img src="./images/figma.png" alt="figma" class="w-5 sm:w-8" />
+            </li>
+            <li
+              class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+              <img src="./images/ai.png" alt="ai" class="w-5 sm:w-8" />
+            </li>
+            <li
+              class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+              <img src="./images/pinterest.png" alt="pin" class="w-5 sm:w-8" />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!--  ------ services ------ -->
+
+    <div id="services" class="w-full px-[12%] py-10 scroll-mt-20">
+      <h4 class="text-center mb-2 text-lg font-Ovo">What i offer</h4>
+      <h2 class="text-center text-5xl font-Ovo">My services</h2>
+      <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
+        I am an artist with 7 years of experience who has taken part in many large projects.
+      </p>
+
+      <div class="grid grid-cols-auto gap-6 my-10">
+        <div
+          class="border border-gray-400 rounded-lg px-8 py-12 hover:shadow-[4px_4px_0_#000] cursor-pointer hover:bg-[#e6ecff] hover:-translate-y-1 duration-500">
+          <img src="./images/web-design.png" alt="" class="w-10" />
+          <h3 class="text-lg my-4 text-gray-700">Web design</h3>
+          <p class="text-sm text-gray-600 leading-5">
+            Creating an attractive and unique design for your website.
+          </p>
+          <a href="" class="flex items-center gap-2 text-sm mt-5"
+            >Read more... <img src="./images/arrow-right.png" alt="arrow" class="w-4"
+          /></a>
+        </div>
+        <div
+          class="border border-gray-400 rounded-lg px-8 py-12 hover:shadow-[4px_4px_0_#000] cursor-pointer hover:bg-[#ccd9ff] hover:-translate-y-1 duration-500">
+          <img src="./images/management.png" alt="" class="w-10" />
+          <h3 class="text-lg my-4 text-gray-700">Individual orders</h3>
+          <p class="text-sm text-gray-600 leading-5">
+            Personal orders with attention to all details and wishes. From sketches to full
+            drawings.
+          </p>
+          <a href="" class="flex items-center gap-2 text-sm mt-5"
+            >Read more... <img src="./images/arrow-right.png" alt="arrow" class="w-4"
+          /></a>
+        </div>
+        <div
+          class="border border-gray-400 rounded-lg px-8 py-12 hover:shadow-[4px_4px_0_#000] cursor-pointer hover:bg-[#ececf9] hover:-translate-y-1 duration-500">
+          <img src="./images/rpainting.png" alt="" class="w-10" />
+          <h3 class="text-lg my-4 text-gray-700">Refining the painting</h3>
+          <p class="text-sm text-gray-600 leading-5">
+            Finalising details of the drawing, improving it, correcting inaccuracies.
+          </p>
+          <a href="" class="flex items-center gap-2 text-sm mt-5"
+            >Read more... <img src="./images/arrow-right.png" alt="arrow" class="w-4"
+          /></a>
+        </div>
+        <div
+          class="border border-gray-400 rounded-lg px-8 py-12 hover:shadow-[4px_4px_0_#000] cursor-pointer hover:bg-[#ebf0fa] hover:-translate-y-1 duration-500">
+          <img src="./images/rates.png" alt="" class="w-10" />
+          <h3 class="text-lg my-4 text-gray-700">Evaluating your work</h3>
+          <p class="text-sm text-gray-600 leading-5">
+            Assistance in understanding the market value of your works and recommendations for
+            further development.
+          </p>
+          <a href="" class="flex items-center gap-2 text-sm mt-5"
+            >Read more... <img src="./images/arrow-right.png" alt="arrow" class="w-4"
+          /></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ----- my Work section ----- -->
+
+    <div id="work" class="w-full px-[12%] py-10 scroll-mt-20">
+      <h4 class="text-center mb-2 text-lg font-Ovo">My portfolio</h4>
+      <h2 class="text-center text-5xl font-Ovo">My latest work</h2>
+      <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
+        Welcome to my art portfolio! Explore a collection of projects showcasing my art style.
+      </p>
+
+      <div class="grid grid-cols-auto2 my-10 gap-6">
+        <div
+          class="aspect-square bg-[url('./images/sketch10-2x.png')] bg-no-repeat bg-cover bg-center rounded-lg cursor-pointer"
+          onclick="openModal('./images/sketch10-2x.png')"></div>
+        <div
+          class="aspect-square bg-[url('./images/iskorka2x.jpeg')] bg-no-repeat bg-cover bg-center rounded-lg cursor-pointer"
+          onclick="openModal('./images/iskorka2x.jpeg')"></div>
+        <div
+          class="aspect-square bg-[url('./images/sketch8-2x.jpg')] bg-no-repeat bg-cover bg-center rounded-lg cursor-pointer"
+          onclick="openModal('./images/sketch8-2x.jpg')"></div>
+        <div
+          class="aspect-square bg-[url('./images/xede.jpeg')] bg-no-repeat bg-cover bg-center rounded-lg cursor-pointer"
+          onclick="openModal('./images/xede.jpeg')"></div>
+        <div
+          class="aspect-square bg-[url('./images/art3-2x.png')] bg-no-repeat bg-cover bg-center rounded-lg cursor-pointer"
+          onclick="openModal('./images/art3-2x.png')"></div>
+        <div
+          class="aspect-square bg-[url('./images/art7-2x.png')] bg-no-repeat bg-cover bg-center rounded-lg cursor-pointer"
+          onclick="openModal('./images/art7-2x.png')"></div>
+      </div>
+    </div>
+
+    <div
+      id="modal"
+      class="fixed inset-0 bg-black bg-opacity-50 hidden flex justify-center items-center">
+      <img class="close-btn w-6" src="./images/cross.png" alt="Close" onclick="closeModal()" />
+      <img id="modalImage" src="" alt="Modal Image" class="modal-image" />
+    </div>
+
+    <!-- ----------- contact ---------- -->
+    <div
+      id="contact"
+      class="w-full px-[12%] py-10 scroll-mt-20 bg-[url('./images/bblue.jpgg')] bg-no-repeat bg-[length:90%_auto] bg-center">
+      <h4 class="text-center mb-2 text-lg font-Ovo">Connect with me</h4>
+      <h2 class="text-center text-5xl font-Ovo">Get in touch</h2>
+      <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
+        You can use the form below for ordering and questions.
+      </p>
+
+      <form method="post" action="https://api.web3forms.com/submit" class="max-w-2xl mx-auto">
+        <input type="hidden" name="access_key" value="f5aab8c7-c37c-4c72-88ab-9b34abe1d092" />
+
+        <div class="grid grid-cols-auto gap-6 mt-10 mb-8">
+          <input
+            type="text"
+            placeholder="Enter your name"
+            class="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
+            required
+            name="name" />
+          <input
+            type="email"
+            placeholder="Enter your email"
+            class="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
+            required
+            name="email" />
+        </div>
+        <textarea
+          rows="6"
+          placeholder="Enter your message"
+          class="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6"
+          required
+          name="message"></textarea>
+        <button
+          class="py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500">
+          Submit now <img src="./images/right-chevron.png" alt="" class="w-4" />
+        </button>
+      </form>
+    </div>
+
+    <!-- ------- footer ---------->
+
+    <div class="mt-20">
+      <div class="text-center">
+        <img src="./images/logo4x.png" alt="logo" class="w-36 mx-auto mb-2" />
+        <div class="w-max flex items-center gap-2 mx-auto">
+          <img src="./images/email.png" alt="" class="w-6" />
+          xanacea@gmail.com
+        </div>
+      </div>
+      <div
+        class="text-center sm:flex items-center justify-between border-t border-gray-400 mx-[10%] mt-12 py-6">
+        <p>© 2024 Xanacea. All rights reserved.</p>
+        <ul class="flex items-center gap-10 justify-center mt-4 sm:mt-0">
+          <li>
+            <a href="#">Instagram</a>
+          </li>
+          <li>
+            <a href="#">Pinterest</a>
+          </li>
+          <li>
+            <a href="#">DeviantArt</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
