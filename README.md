@@ -4,7 +4,7 @@
 
 **Сайт:** [rinkiari.github.io/portfolio](https://rinkiari.github.io/portfolio/)
 
-<!-- ![Главный экран](docs/screenshots/main.png) -->
+![Главный экран](docs/screenshots/main.png)
 
 ## Что реализовано
 
